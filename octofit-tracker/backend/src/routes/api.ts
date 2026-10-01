@@ -1,12 +1,12 @@
 import { Router } from 'express'
 import mongoose from 'mongoose'
-import { apiBaseUrl } from '../config/api.js'
 import { Activity, Leaderboard, Team, User, Workout } from '../models/index.js'
 
 const router = Router()
 const activityPointMultipliers = { running: 2, walking: 1, strength: 1.5 } as const
 
-router.get('/', (_request, response) => {
+router.get('/', (request, response) => {
+  const apiBaseUrl = request.app.locals.apiBaseUrl as string
   response.json({
     baseUrl: apiBaseUrl,
     users: `${apiBaseUrl}/api/users`,
