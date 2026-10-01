@@ -1,5 +1,10 @@
 import CollectionTable from './CollectionTable.jsx'
 
+const codespaceName = import.meta.env.VITE_CODESPACE_NAME?.trim()
+const endpoint = codespaceName
+  ? `https://${codespaceName}-8000.app.github.dev/api/activities/`
+  : 'http://localhost:8000/api/activities/'
+
 function displayName(user) {
   if (typeof user === 'string') return user
   return user?.displayName || user?.username || 'Unknown user'
@@ -24,6 +29,7 @@ export default function Activities() {
   return (
     <CollectionTable
       collection="activities"
+      endpoint={endpoint}
       eyebrow="Movement log"
       title="Activities"
       description="Recent movement, effort, and points earned by the community."

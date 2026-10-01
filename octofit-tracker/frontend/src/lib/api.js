@@ -30,8 +30,8 @@ export function normalizeCollection(payload, collectionName) {
   return Array.isArray(current) ? current : []
 }
 
-export async function fetchCollection(collectionName, { signal } = {}) {
-  const response = await fetch(`${apiBaseUrl}/${collectionName}/`, {
+export async function fetchCollection(endpoint, collectionName, { signal } = {}) {
+  const response = await fetch(endpoint, {
     headers: { Accept: 'application/json' },
     signal,
   })

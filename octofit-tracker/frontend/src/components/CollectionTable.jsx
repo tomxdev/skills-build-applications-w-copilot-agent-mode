@@ -1,7 +1,7 @@
 import useApiCollection from './useApiCollection.js'
 
-export default function CollectionTable({ collection, eyebrow, title, description, columns }) {
-  const { items, status, error } = useApiCollection(collection)
+export default function CollectionTable({ collection, endpoint, eyebrow, title, description, columns }) {
+  const { items, status, error } = useApiCollection(collection, endpoint)
 
   return (
     <section aria-labelledby={`${collection}-title`}>
