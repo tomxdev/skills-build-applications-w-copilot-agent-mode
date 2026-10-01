@@ -1,6 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 import mongoose from 'mongoose'
+import { apiBaseUrl } from './config/api.js'
 import { connectDatabase } from './config/database.js'
 import apiRouter from './routes/api.js'
 
@@ -42,7 +43,7 @@ app.use((error: unknown, _request: express.Request, response: express.Response, 
 async function startServer(): Promise<void> {
   await connectDatabase()
   app.listen(port, () => {
-    console.log(`OctoFit Tracker API listening on port ${port}`)
+    console.log(`OctoFit Tracker API listening on ${apiBaseUrl}`)
   })
 }
 
