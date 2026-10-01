@@ -109,3 +109,70 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+:root {
+  --ink: #1b2925;
+  --ink-soft: #3c5049;
+  --muted: #74827c;
+  --surface: #ffffff;
+  --page: #f5f7f3;
+  --line: #dfe7e1;
+  --line-soft: #edf1ed;
+  --header-tint: #f7f9f6;
+  --green-100: #e5f3e9;
+  --green-600: #34835a;
+  --green-700: #276b49;
+  --green-800: #1c5539;
+  --coral: #e8795d;
+  --coral-pale: #fff0eb;
+  --coral-deep: #a74630;
+  --body-font: "DM Sans", "Avenir Next", sans-serif;
+  --display-font: "Manrope", "Avenir Next", sans-serif;
+
+  color-scheme: light;
+  font: 16px/1.5 var(--body-font);
+  letter-spacing: 0;
+  color: var(--ink);
+  background: var(--page);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background-color: var(--page);
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgb(39 107 73 / 2%) 0,
+    rgb(39 107 73 / 2%) 1px,
+    transparent 1px,
+    transparent 9px
+  );
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+#root {
+  width: 100%;
+  max-width: none;
+  min-height: 100vh;
+  margin: 0;
+  display: block;
+  border: 0;
+  text-align: left;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--coral);
+  outline-offset: 3px;
+}
